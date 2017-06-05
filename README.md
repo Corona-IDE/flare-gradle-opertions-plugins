@@ -2,7 +2,13 @@
 
 Contains a variety of compile or test-related build enhancements
 
-# merge coverage reports
+## Legal
+
+Lockdown is distributed under the [MIT License](https://opensource.org/licenses/MIT). There are no requirements for using it in your own project (a line in a NOTICES file is appreciated but not necessary for use)
+
+The requirement for a copy of the license being included in distributions is fulfilled by a copy of the [LICENSE](./LICENSE) file being included in constructed JAR archives
+
+# Merge Coverage Reports
 
 Gradle plug-in to merge jacoco code coverages reports for multi-module projects
 
