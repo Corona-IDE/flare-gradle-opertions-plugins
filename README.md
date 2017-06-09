@@ -1,4 +1,4 @@
-# flare-gradle-operations-plugins
+# flare-operations-plugins
 
 Contains a variety of compile or test-related build enhancements
 
