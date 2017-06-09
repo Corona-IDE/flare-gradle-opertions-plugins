@@ -1,5 +1,7 @@
 # flare-operations-plugins
 
+[![Travis CI](https://img.shields.io/travis/Corona-IDE/flare-operations-plugins.svg?branch=master)](https://travis-ci.org/Corona-IDE/flare-operations-plugins)
+
 Contains a variety of compile or test-related build enhancements
 
 ## Legal
