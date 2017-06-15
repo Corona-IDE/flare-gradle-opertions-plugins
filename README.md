@@ -1,6 +1,6 @@
 # flare-operations-plugins
 
-[![Travis CI](https://img.shields.io/travis/Corona-IDE/flare-operations-plugins.svg?branch=master)](https://travis-ci.org/Corona-IDE/flare-operations-plugins)
+[![Travis CI](https://img.shields.io/travis/Corona-IDE/flare-operations-plugins.svg?branch=master)](https://travis-ci.org/Corona-IDE/flare-operations-plugins) [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/groups/Corona-IDE/locations/flare-operations-plugins/public/results/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/groups/Corona-IDE/locations/flare-operations-plugins/public/results/branches/master)
 
 Contains a variety of compile or test-related build enhancements
 
