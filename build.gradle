@@ -20,13 +20,15 @@ apply plugin: 'nebula.maven-resolved-dependencies'
 apply plugin: 'nebula.maven-base-publish'
 apply plugin: 'nebula.maven-dependencies'
 
+description = 'Gradle tasks and utilities for build and test operations'
+
 dependencyRecommendations {
     dependencyLock file: file("${rootDir}/dependencies.lock")
 }
 
 //Default all projects to a synchronized IDE version number. Certain projects, such as the API project, will override this value
 version = "${flareVersion}"
-group = 'com.coronaide.flare'
+group = 'org.starchartlabs.flare'
 
 sourceCompatibility = "${javaVersion}"
 
@@ -40,6 +42,12 @@ eclipse {
 
 repositories {
     mavenCentral()
+}
+
+//Dependency versions managed in $rootDir/dependencies.lock
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
 }
 
 //Task which will show what the dependency set of the project is in a tree form
@@ -99,6 +107,52 @@ test {
 
     useTestNG() {
         useDefaultListeners = true
+    }
+}
+
+//TODO romeara temporary testing
+publishing {
+    repositories {
+        mavenLocal()
+    }
+}
+
+publishing {
+    publications {
+        nebula(MavenPublication) {
+            artifact sourcesJar {
+                classifier 'sources'
+            }
+            artifact javadocJar {
+                classifier 'javadoc'
+            }
+            pom.withXml {
+                configurations.compile.resolvedConfiguration.firstLevelModuleDependencies.each { dep ->
+                    asNode().dependencies[0].dependency.find {
+                        it.artifactId[0].text() == dep.moduleName &&
+                        it.groupId[0].text() == dep.moduleGroup
+                    }?.scope[0]?.value = 'compile'
+                }
+                
+                asNode().appendNode('url', 'https://github.com/Corona-IDE/flare-operations-plugins')
+                Node licenseNode = asNode().appendNode('licenses').appendNode('license')
+                
+                licenseNode.appendNode('name', 'The MIT License')
+                licenseNode.appendNode('url', 'https://opensource.org/licenses/MIT')
+                licenseNode.appendNode('distribution', 'repo')
+                
+                Node scmNode = asNode().appendNode('scm')
+                scmNode.appendNode('connection', 'scm:git:git://github.com/Corona-IDE/flare-operations-plugins.git')
+                scmNode.appendNode('developerConnection', 'scm:git:ssh://github.com/Corona-IDE/flare-operations-plugins.git')
+                scmNode.appendNode('url', 'https://github.com/Corona-IDE/flare-operations-plugins')
+                
+                Node developerNode = asNode().appendNode('developers').appendNode('developer')
+                
+                developerNode.appendNode('id', 'romeara')
+                developerNode.appendNode('name', 'Ryan OMeara')
+                developerNode.appendNode('url', 'https://github.com/romeara')
+            }
+        }
     }
 }
 

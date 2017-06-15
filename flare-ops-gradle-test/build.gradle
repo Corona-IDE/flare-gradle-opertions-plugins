@@ -1,0 +1,11 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'org.starchartlabs.flare', name: 'flare-operations-plugins', version: '0.1.0-SNAPSHOT', changing: true
+    }
+}
+
+apply plugin: 'starchartlabs.flare.merge-coverage-reports'
