@@ -133,21 +133,21 @@ publishing {
                         it.groupId[0].text() == dep.moduleGroup
                     }?.scope[0]?.value = 'compile'
                 }
-                
-                asNode().appendNode('url', 'https://github.com/Corona-IDE/flare-operations-plugins')
+
+                asNode().appendNode('url', 'https://github.com/StarChart-Labs/flare-operations-plugins')
                 Node licenseNode = asNode().appendNode('licenses').appendNode('license')
-                
+
                 licenseNode.appendNode('name', 'The MIT License')
                 licenseNode.appendNode('url', 'https://opensource.org/licenses/MIT')
                 licenseNode.appendNode('distribution', 'repo')
-                
+
                 Node scmNode = asNode().appendNode('scm')
-                scmNode.appendNode('connection', 'scm:git:git://github.com/Corona-IDE/flare-operations-plugins.git')
-                scmNode.appendNode('developerConnection', 'scm:git:ssh://github.com/Corona-IDE/flare-operations-plugins.git')
-                scmNode.appendNode('url', 'https://github.com/Corona-IDE/flare-operations-plugins')
-                
+                scmNode.appendNode('connection', 'scm:git:git://github.com/StarChart-Labs/flare-operations-plugins.git')
+                scmNode.appendNode('developerConnection', 'scm:git:ssh://github.com/StarChart-Labs/flare-operations-plugins.git')
+                scmNode.appendNode('url', 'https://github.com/StarChart-Labs/flare-operations-plugins')
+
                 Node developerNode = asNode().appendNode('developers').appendNode('developer')
-                
+
                 developerNode.appendNode('id', 'romeara')
                 developerNode.appendNode('name', 'Ryan OMeara')
                 developerNode.appendNode('url', 'https://github.com/romeara')
