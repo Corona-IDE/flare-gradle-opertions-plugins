@@ -14,4 +14,4 @@ The requirement for a copy of the license being included in distributions is ful
 
 Gradle plug-in to merge jacoco code coverages reports for multi-module projects
 
-There are many tools, such as CodeCov, which want to consume a single code coverage report. For projects using the Gradle sub-module pattern, this must be constructed via specialized tasks. The Flare Merged Coverage Reports plug-in reduces the boilerplate for this setup.
+There are many tools, such as CodeCov, which want to consume a single code coverage report. For projects using the Gradle sub-module pattern, this must be constructed via specialized tasks. The Flare Merged Coverage Reports plug-in reduces the boilerplate for this setup, adding a task to a project which depends on the testing tasks of all sub-projects and is automcatically run as part of the "build" task
