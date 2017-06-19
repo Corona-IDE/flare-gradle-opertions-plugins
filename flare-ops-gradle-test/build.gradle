@@ -8,4 +8,4 @@ buildscript {
     }
 }
 
-apply plugin: 'starchartlabs.flare.merge-coverage-reports'
+apply plugin: 'org.starchartlabs.flare.merge-coverage-reports'
