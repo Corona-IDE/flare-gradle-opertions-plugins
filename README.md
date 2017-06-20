@@ -2,7 +2,7 @@
 
 [![Travis CI](https://img.shields.io/travis/StarChart-Labs/flare-operations-plugins.svg?branch=master)](https://travis-ci.org/StarChart-Labs/flare-operations-plugins) [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/groups/StarChart-Labs/locations/flare-operations-plugins/public/results/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/groups/StarChart-Labs/locations/flare-operations-plugins/public/results/branches/master)
 
-Contains a variety of compile or test-related build enhancements
+Contains plug-ins for the Gradle build system which simplify configuration or reduce boilerplate for commonly-used conventions
 
 ## Legal
 
@@ -10,8 +10,10 @@ Lockdown is distributed under the [MIT License](https://opensource.org/licenses/
 
 The requirement for a copy of the license being included in distributions is fulfilled by a copy of the [LICENSE](./LICENSE) file being included in constructed JAR archives
 
-# Merge Coverage Reports
+## Plug-ins
 
-Gradle plug-in to merge jacoco code coverages reports for multi-module projects
+### org.starchartlabs.flare.merge-coverage-reports
 
-There are many tools, such as CodeCov, which want to consume a single code coverage report. For projects using the Gradle sub-module pattern, this must be constructed via specialized tasks. The Flare Merged Coverage Reports plug-in reduces the boilerplate for this setup, adding a task to a project which depends on the testing tasks of all sub-projects and is automcatically run as part of the "build" task
+Introduces steps in the standard build process to merge Jacoco code coverage reports from multiple sub-projects into a single report. This is often necessary for submission to external code coverage reporting services.
+
+See the [usage documentation](./doc/merge-coverage-reports.md) for information and requirements for applying the plug-in
