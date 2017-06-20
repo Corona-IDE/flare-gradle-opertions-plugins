@@ -9,3 +9,33 @@ buildscript {
 }
 
 apply plugin: 'org.starchartlabs.flare.merge-coverage-reports'
+
+allprojects{
+    apply plugin: 'java'
+    
+    repositories{
+        mavenCentral()
+    }
+}
+
+subprojects{
+    apply plugin: 'jacoco'
+    
+    test {
+        testLogging {
+            exceptionFormat 'full'
+
+            quiet {
+                events 'skipped', 'failed', 'passed'
+            }
+
+            debug {
+                events 'started', 'standard_out', 'standard_error', 'skipped', 'failed', 'passed'
+            }
+        }
+
+        useTestNG() {
+            useDefaultListeners = true
+        }
+    }
+}
