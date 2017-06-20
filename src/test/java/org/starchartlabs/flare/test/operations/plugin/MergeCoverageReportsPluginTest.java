@@ -27,6 +27,7 @@ public class MergeCoverageReportsPluginTest {
         project.getPluginManager().apply(PLUGIN_ID);
 
         Assert.assertTrue(project.getPluginManager().hasPlugin("base"));
+        Assert.assertTrue(project.getPluginManager().hasPlugin("java"));
         Assert.assertTrue(project.getPluginManager().hasPlugin("jacoco"));
     }
 
