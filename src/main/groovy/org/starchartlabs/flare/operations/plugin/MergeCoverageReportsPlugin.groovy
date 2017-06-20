@@ -19,7 +19,6 @@ public class MergeCoverageReportsPlugin implements Plugin<Project> {
     public void apply(Project project) {
         //Base: Provides build task, Java: Provides sourceSets (and sourceSets.main configuration), Jacoco: Provides coverage instrumentation
         project.apply plugin: 'base'
-        project.apply plugin: 'java'
         project.apply plugin: 'jacoco'
 
         JacocoReport mergeTask = project.getTasks().create(TASK_NAME, MergeCoverageReportsTask.class);

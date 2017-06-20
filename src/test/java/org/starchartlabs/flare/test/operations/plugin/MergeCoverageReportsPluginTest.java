@@ -27,8 +27,19 @@ public class MergeCoverageReportsPluginTest {
         project.getPluginManager().apply(PLUGIN_ID);
 
         Assert.assertTrue(project.getPluginManager().hasPlugin("base"));
-        Assert.assertTrue(project.getPluginManager().hasPlugin("java"));
         Assert.assertTrue(project.getPluginManager().hasPlugin("jacoco"));
+    }
+
+    @Test
+    public void javaPluginAppliedToSubProject() throws Exception {
+        Project project = ProjectBuilder.builder().build();
+        Project subProject = ProjectBuilder.builder()
+                .withParent(project)
+                .build();
+
+        project.getPluginManager().apply(PLUGIN_ID);
+
+        Assert.assertTrue(subProject.getPluginManager().hasPlugin("java"));
     }
 
     @Test

@@ -16,8 +16,11 @@ public class MergeCoverageReportsTask extends JacocoReport {
         configure{
             executionData project.fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 
-            //For each Java (or Java-extending) sub-project, get the main source set. Must be done after evaluation to detect java plug-in
-            project.subprojects.each { sourceSets it.sourceSets.main }
+            //Sub-project, get the main source set. Must be done after evaluation to detect java plug-in
+            project.subprojects.each {
+                it.apply plugin: 'java'
+                sourceSets it.sourceSets.main
+            }
 
             reports {
                 xml.enabled true
