@@ -25,7 +25,7 @@ apply plugin: 'org.starchartlabs.flare.merge-coverage-reports'
 
 ## Use
 
-Applying the plug-in automatically integrates the merge step into the build process by creating a `mergeCoverageReports` task. This task depends on the `test` task of all sub-projects, and is in turn depended on by the root project's `build` task
+Applying the plug-in automatically integrates the merge step into the build process by creating a `mergeCoverageReports` task. This task depends on the `test` task of all sub-projects, and is in turn depended on by the root project's `check` task
 
 ## Input and Output Reports
 

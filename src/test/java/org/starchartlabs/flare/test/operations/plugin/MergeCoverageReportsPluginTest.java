@@ -46,7 +46,7 @@ public class MergeCoverageReportsPluginTest {
         Task task = project.getTasks().getByName("mergeCoverageReports");
         Assert.assertTrue(task instanceof MergeCoverageReportsTask);
 
-        Task buildTask = project.getTasks().getByName("build");
+        Task buildTask = project.getTasks().getByName("check");
 
         Assert.assertTrue(buildTask.getDependsOn().contains(task));
     }

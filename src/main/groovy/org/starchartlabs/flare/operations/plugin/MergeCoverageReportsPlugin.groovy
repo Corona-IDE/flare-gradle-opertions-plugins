@@ -29,7 +29,7 @@ public class MergeCoverageReportsPlugin implements Plugin<Project> {
 
         JacocoReport mergeTask = project.getTasks().create(TASK_NAME, MergeCoverageReportsTask.class);
 
-        project.getTasks().getByName('build').dependsOn mergeTask
+        project.getTasks().getByName('check').dependsOn mergeTask
 
         //Merge coverage depends on output from all subproject tests
         mergeTask.dependsOn { project.subprojects*.test }

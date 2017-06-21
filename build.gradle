@@ -126,7 +126,7 @@ jacocoTestReport {
 }
 
 jacocoTestReport.dependsOn test
-build.dependsOn jacocoTestReport
+check.dependsOn jacocoTestReport
 
 //TODO romeara temporary testing
 publishing {
