@@ -6,7 +6,6 @@
 * [Contributing](#contributing)
 * [Plugins](#plugins)
     * [org.starchartlabs.flare.merge-coverage-reports](#org.starchartlabs.flare.merge-coverage-reports)
-* [Handling Key Files](#handling-key-files)
 
 Contains plug-ins for the Gradle build system which simplify configuration or reduce boilerplate for commonly-used conventions
 
