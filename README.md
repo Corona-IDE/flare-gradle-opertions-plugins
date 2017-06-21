@@ -1,6 +1,12 @@
 # flare-operations-plugins
 
-[![Travis CI](https://img.shields.io/travis/StarChart-Labs/flare-operations-plugins.svg?branch=master)](https://travis-ci.org/StarChart-Labs/flare-operations-plugins) [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/groups/StarChart-Labs/locations/flare-operations-plugins/public/results/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/groups/StarChart-Labs/locations/flare-operations-plugins/public/results/branches/master)
+[![Travis CI](https://img.shields.io/travis/StarChart-Labs/flare-operations-plugins.svg?branch=master)](https://travis-ci.org/StarChart-Labs/flare-operations-plugins) [![Code Coverage](https://img.shields.io/codecov/c/github/StarChart-Labs/flare-operations-plugins.svg)](https://codecov.io/github/StarChart-Labs/flare-operations-plugins) [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/groups/StarChart-Labs/locations/flare-operations-plugins/public/results/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/groups/StarChart-Labs/locations/flare-operations-plugins/public/results/branches/master)
+
+* [Legal](#legal)
+* [Contributing](#contributing)
+* [Plugins](#plugins)
+    * [org.starchartlabs.flare.merge-coverage-reports](#org.starchartlabs.flare.merge-coverage-reports)
+* [Handling Key Files](#handling-key-files)
 
 Contains plug-ins for the Gradle build system which simplify configuration or reduce boilerplate for commonly-used conventions
 
