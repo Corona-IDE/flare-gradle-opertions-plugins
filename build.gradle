@@ -112,6 +112,22 @@ test {
     }
 }
 
+jacocoTestReport {
+    reports {
+        executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+        
+        sourceSets project.sourceSets.main
+        
+        xml.enabled true
+        csv.enabled false
+        html.enabled false
+        xml.destination "${buildDir}/reports/jacoco/report.xml"
+    }
+}
+
+jacocoTestReport.dependsOn test
+build.dependsOn jacocoTestReport
+
 //TODO romeara temporary testing
 publishing {
     repositories {
