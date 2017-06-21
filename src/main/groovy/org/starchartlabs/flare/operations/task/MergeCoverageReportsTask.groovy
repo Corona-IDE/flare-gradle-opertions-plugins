@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) 2017 The StarChart-Labs@github.com Authors
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
 package org.starchartlabs.flare.operations.task
 
 import org.gradle.testing.jacoco.tasks.JacocoReport

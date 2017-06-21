@@ -10,6 +10,10 @@ Lockdown is distributed under the [MIT License](https://opensource.org/licenses/
 
 The requirement for a copy of the license being included in distributions is fulfilled by a copy of the [LICENSE](./LICENSE) file being included in constructed JAR archives
 
+## Contributing
+
+Information for how to contribute to the Flare Operations Plugins can be found in [the contribution guidelines](CONTRIBUTING.md)
+
 ## Plug-ins
 
 ### org.starchartlabs.flare.merge-coverage-reports
@@ -17,3 +21,7 @@ The requirement for a copy of the license being included in distributions is ful
 Introduces steps in the standard build process to merge Jacoco code coverage reports from multiple sub-projects into a single report. This is often necessary for submission to external code coverage reporting services.
 
 See the [usage documentation](./doc/merge-coverage-reports.md) for information and requirements for applying the plug-in
+
+## Collaborators
+
+Information for collaborators, including the release process, can be found in the [collaborator documention](./COLLABORATORS.md)
