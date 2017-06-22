@@ -1,13 +1,11 @@
 buildscript {
     repositories {
-        maven {
-            url 'https://plugins.gradle.org/m2/'
-            mavenCentral()
-        }
+        maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
         classpath group: 'com.netflix.nebula', name: 'nebula-dependency-recommender', version: '4.2.0'
         classpath group: 'com.netflix.nebula', name: 'nebula-publishing-plugin', version: '4.2.0'
+        classpath group: 'com.jfrog.bintray.gradle', name: 'gradle-bintray-plugin', version: '1.7.3'
     }
 }
 
@@ -19,6 +17,7 @@ apply plugin: 'nebula.dependency-recommender'
 apply plugin: 'nebula.maven-resolved-dependencies'
 apply plugin: 'nebula.maven-base-publish'
 apply plugin: 'nebula.maven-dependencies'
+apply plugin: 'com.jfrog.bintray'
 
 description = 'Gradle tasks and utilities for build and test operations'
 
@@ -40,8 +39,9 @@ eclipse {
     }
 }
 
+//JCenter is the Gradle plug-in standard
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 //Dependency versions managed in $rootDir/dependencies.lock
@@ -128,13 +128,6 @@ jacocoTestReport {
 jacocoTestReport.dependsOn test
 check.dependsOn jacocoTestReport
 
-//TODO romeara temporary testing
-publishing {
-    repositories {
-        mavenLocal()
-    }
-}
-
 publishing {
     publications {
         nebula(MavenPublication) {
@@ -169,6 +162,35 @@ publishing {
                 developerNode.appendNode('id', 'romeara')
                 developerNode.appendNode('name', 'Ryan OMeara')
                 developerNode.appendNode('url', 'https://github.com/romeara')
+            }
+        }
+    }
+}
+
+bintray {
+    user = System.getProperty('bintray_user')
+    key = System.getProperty('bintray_key')
+    publications = [ 'nebula' ]
+
+    if(!project.hasProperty('remoteDeploy')){
+        dryRun = true
+    }
+
+    pkg {
+        repo = 'flare'
+        name = "${project.name}"
+        userOrg = 'starchart-labs'
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/StarChart-Labs/flare-operations-plugins.git'
+
+        version {
+            name = "${flareVersion}"
+            desc = "${project.name} release ${flareVersion} final"
+            released  = new Date()
+            vcsTag = "v${flareVersion}"
+
+            gpg {
+                sign = true
             }
         }
     }
