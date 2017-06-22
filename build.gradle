@@ -128,6 +128,15 @@ jacocoTestReport {
 jacocoTestReport.dependsOn test
 check.dependsOn jacocoTestReport
 
+//If not a remote run, publish to local only
+if(!project.hasProperty('remoteDeploy')){
+    publishing {
+        repositories {
+            mavenLocal()
+        }
+    }
+}
+
 publishing {
     publications {
         nebula(MavenPublication) {

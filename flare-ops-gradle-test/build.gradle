@@ -12,6 +12,7 @@ apply plugin: 'org.starchartlabs.flare.merge-coverage-reports'
 
 allprojects{
     apply plugin: 'java'
+    apply plugin: 'org.starchartlabs.flare.dependency-insight'
     
     repositories{
         mavenCentral()

@@ -7,6 +7,7 @@
 * [Plugins](#plugins)
     * [org.starchartlabs.flare.merge-coverage-reports](#org.starchartlabs.flare.merge-coverage-reports)
     * [org.starchartlabs.flare.increase-test-logging](#org.starchartlabs.flare.increase-test-logging)
+    * [org.starchartlabs.flare.dependency-insight](#org.starchartlabs.flare.dependency-insight)
 
 Contains plug-ins for the Gradle build system which simplify configuration or reduce boilerplate for commonly-used conventions
 
@@ -33,6 +34,12 @@ See the [usage documentation](./doc/merge-coverage-reports.md) for information a
 Introduces standard conventions for increased logging during test execution
 
 See the [usage documentation](./doc/increase-test-logging.md) for information and requirements for applying the plug-in
+
+### org.starchartlabs.flare.dependency-insight
+
+Introduces standard tasks for viewing dependency information
+
+See the [usage documentation](./doc/dependency-insight.md) for information and requirements for applying the plug-in
 
 ## Collaborators
 
