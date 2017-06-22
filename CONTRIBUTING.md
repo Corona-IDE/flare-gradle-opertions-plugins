@@ -15,7 +15,9 @@ We welcome any contributions! If you wish to contribute:
 
 ## Development Environment Setup
 
-Currently, Eclipse is the supported IDE for development of flare-operations-plugins. It is recommended to create an isolated workspace for StarChart Labs projects. You should also import the standard StarChart Labs formatting and save settings from eclipseConfiguration:
+Currently, Eclipse is the supported IDE for development of flare-operations-plugins. The Buildship plug-in is used to import projects via Gradle.
+
+It is recommended to create an isolated workspace for StarChart Labs projects. You should also import the standard StarChart Labs formatting and save settings from eclipseConfiguration:
 
 - `Java > CodeStyle > Cleanup` is imported from cleanup.xml
 - `Java > CodeStyle > Formatter` is imported from codeformatter.xml

@@ -6,6 +6,7 @@
 * [Contributing](#contributing)
 * [Plugins](#plugins)
     * [org.starchartlabs.flare.merge-coverage-reports](#org.starchartlabs.flare.merge-coverage-reports)
+    * [org.starchartlabs.flare.increase-test-logging](#org.starchartlabs.flare.increase-test-logging)
 
 Contains plug-ins for the Gradle build system which simplify configuration or reduce boilerplate for commonly-used conventions
 
@@ -26,6 +27,12 @@ Information for how to contribute to the Flare Operations Plugins can be found i
 Introduces steps in the standard build process to merge Jacoco code coverage reports from multiple sub-projects into a single report. This is often necessary for submission to external code coverage reporting services.
 
 See the [usage documentation](./doc/merge-coverage-reports.md) for information and requirements for applying the plug-in
+
+### org.starchartlabs.flare.increase-test-logging
+
+Introduces standard conventions for increased logging during test execution
+
+See the [usage documentation](./doc/increase-test-logging.md) for information and requirements for applying the plug-in
 
 ## Collaborators
 
