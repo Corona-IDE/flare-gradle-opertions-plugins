@@ -26,7 +26,6 @@ dependencyRecommendations {
 }
 
 //Default all projects to a synchronized IDE version number. Certain projects, such as the API project, will override this value
-version = "${flareVersion}"
 group = 'org.starchartlabs.flare'
 
 sourceCompatibility = "${javaVersion}"
@@ -193,10 +192,10 @@ bintray {
         vcsUrl = 'https://github.com/StarChart-Labs/flare-operations-plugins.git'
 
         version {
-            name = "${flareVersion}"
-            desc = "${project.name} release ${flareVersion} final"
+            name = "${project.version}"
+            desc = "${project.name} release ${project.version} final"
             released  = new Date()
-            vcsTag = "v${flareVersion}"
+            vcsTag = "v${project.version}"
 
             gpg {
                 sign = true
