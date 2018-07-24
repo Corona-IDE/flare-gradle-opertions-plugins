@@ -1,6 +1,6 @@
 # org.starchartlabs.flare.dependency-insight
 
-The `dependency-insight` plug-in is a convention plug-in which is intended to apply standard tasks for task types provided by the Gradle APIs related to dependency reporting.
+The `dependency-insight` plug-in is a convention plug-in which is intended to apply standard tasks for task types provided by the Gradle APIs related to dependency reporting. It is intended for use on multi-module projects - for single-module projects, Gradle provides the similar `dependencies` and `dependenciesInsight` tasks
 
 ## Application
 

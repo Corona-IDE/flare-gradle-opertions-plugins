@@ -37,7 +37,7 @@ See the [usage documentation](./doc/increase-test-logging.md) for information an
 
 ### org.starchartlabs.flare.dependency-insight
 
-Introduces standard tasks for viewing dependency information
+Introduces standard tasks for viewing dependency information in a multi-module project
 
 See the [usage documentation](./doc/dependency-insight.md) for information and requirements for applying the plug-in
 
