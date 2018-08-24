@@ -12,6 +12,7 @@ import org.gradle.api.tasks.diagnostics.DependencyInsightReportTask;
 import org.gradle.api.tasks.diagnostics.DependencyReportTask;
 import org.gradle.internal.impldep.org.testng.Assert;
 import org.gradle.testfixtures.ProjectBuilder;
+import org.starchartlabs.flare.operations.dsl.ProjectDependencyResultSpec;
 import org.testng.annotations.Test;
 
 public class DependencyInsightPluginTest {
@@ -28,6 +29,11 @@ public class DependencyInsightPluginTest {
 
         Task dependencyInsightReport = project.getTasks().getByName("dependencyInsightReport");
         Assert.assertTrue(dependencyInsightReport instanceof DependencyInsightReportTask);
+
+        Task dependencyProjectReport = project.getTasks().getByName("dependencyProjectReport");
+        Assert.assertTrue(dependencyProjectReport instanceof DependencyInsightReportTask);
+        Assert.assertTrue(((DependencyInsightReportTask) dependencyProjectReport)
+                .getDependencySpec() instanceof ProjectDependencyResultSpec);
     }
 
 }
