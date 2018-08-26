@@ -30,7 +30,7 @@ public class MergeCoverageReportsTask extends JacocoReport {
 
             reports {
                 xml.enabled true
-                xml.destination "${project.buildDir}/reports/jacoco/report.xml"
+                xml.destination project.file("${project.buildDir}/reports/jacoco/report.xml")
                 html.enabled false
                 csv.enabled false
             }
