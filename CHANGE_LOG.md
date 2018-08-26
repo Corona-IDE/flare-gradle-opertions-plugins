@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 - (GH-10) Add "dependencProjectReport" task to allow finding dependency instances specifically of projects in the same multi-module configuration
+- (GH-9) Switch to passing report location as a file to try and use newer APIs when available
 
 ## [0.1.0]
 - Create a plug-in which adds standard behavior for creating a merged code coverage report
