@@ -19,7 +19,7 @@ The requirement for a copy of the license being included in distributions is ful
 
 ## Contributing
 
-Information for how to contribute to the Flare Operations Plugins can be found in [the contribution guidelines](CONTRIBUTING.md)
+Information for how to contribute to the Flare Operations Plugins can be found in [the contribution guidelines](./docs/CONTRIBUTING.md)
 
 ## Plug-ins
 
@@ -27,20 +27,20 @@ Information for how to contribute to the Flare Operations Plugins can be found i
 
 Introduces steps in the standard build process to merge Jacoco code coverage reports from multiple sub-projects into a single report. This is often necessary for submission to external code coverage reporting services.
 
-See the [usage documentation](./doc/merge-coverage-reports.md) for information and requirements for applying the plug-in
+See the [usage documentation](./docs/merge-coverage-reports.md) for information and requirements for applying the plug-in
 
 ### org.starchartlabs.flare.increase-test-logging
 
 Introduces standard conventions for increased logging during test execution
 
-See the [usage documentation](./doc/increase-test-logging.md) for information and requirements for applying the plug-in
+See the [usage documentation](./docs/increase-test-logging.md) for information and requirements for applying the plug-in
 
 ### org.starchartlabs.flare.dependency-insight
 
 Introduces standard tasks for viewing dependency information in a multi-module project
 
-See the [usage documentation](./doc/dependency-insight.md) for information and requirements for applying the plug-in
+See the [usage documentation](./docs/dependency-insight.md) for information and requirements for applying the plug-in
 
 ## Collaborators
 
-Information for collaborators, including the release process, can be found in the [collaborator documention](./COLLABORATORS.md)
+Information for collaborators, including the release process, can be found in the [collaborator documention](./docs/COLLABORATORS.md)
