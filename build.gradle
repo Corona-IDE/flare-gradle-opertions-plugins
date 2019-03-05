@@ -12,6 +12,7 @@ buildscript {
 }
 
 apply plugin: 'eclipse'
+apply plugin: 'java-gradle-plugin'
 apply plugin: 'jacoco'
 apply plugin: 'maven-publish'
 apply plugin: 'nebula.dependency-recommender'
@@ -49,6 +50,8 @@ repositories {
 //Dependency versions managed in $rootDir/dependencies.lock
 dependencies {
     compile gradleApi()
+    
+    testCompile gradleTestKit()
     
     testCompile group: 'org.testng', name: 'testng'
 }
