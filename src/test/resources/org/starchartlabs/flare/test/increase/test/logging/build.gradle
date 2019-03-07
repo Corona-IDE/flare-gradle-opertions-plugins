@@ -1,0 +1,4 @@
+plugins {
+    id 'java'
+    id  'org.starchartlabs.flare.increase-test-logging'
+}
