@@ -24,7 +24,7 @@ import org.gradle.testing.jacoco.tasks.JacocoReport;
  */
 public class MergeCoverageReportsTask extends JacocoReport {
 
-    public MergeCoverageReportsTask(){
+    public MergeCoverageReportsTask() {
         super();
 
         executionData(

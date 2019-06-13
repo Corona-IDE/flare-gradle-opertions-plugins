@@ -29,7 +29,8 @@ public class MergeCoverageReportsPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-        //Base: Provides build task, Java: Provides sourceSets (and sourceSets.main configuration), Jacoco: Provides coverage instrumentation
+        // Base: Provides build task, Java: Provides sourceSets (and sourceSets.main configuration), Jacoco: Provides
+        // coverage instrumentation
         project.getPluginManager().apply("base");
         project.getPluginManager().apply("jacoco");
 
@@ -37,10 +38,10 @@ public class MergeCoverageReportsPlugin implements Plugin<Project> {
 
         project.getTasks().getByName("check").dependsOn(mergeTask);
 
-        //Merge coverage depends on output from all subproject tests
+        // Merge coverage depends on output from all subproject tests
         project.getSubprojects().forEach(it -> {
             Task test = it.getTasks().getByName("test");
-            if(test != null) {
+            if (test != null) {
                 mergeTask.dependsOn(test);
             }
         });
