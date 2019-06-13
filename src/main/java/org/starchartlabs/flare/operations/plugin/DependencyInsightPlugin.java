@@ -23,7 +23,7 @@ import org.starchartlabs.flare.operations.dsl.ProjectDependencyResultSpec;
  * @author romeara
  * @since 0.1.0
  */
-public class DependencyInsightPlugin implements Plugin<Project>{
+public class DependencyInsightPlugin implements Plugin<Project> {
 
     private static final String LIST_TASK_NAME = "dependencyReport";
 
@@ -33,16 +33,17 @@ public class DependencyInsightPlugin implements Plugin<Project>{
 
     @Override
     public void apply(Project project) {
-        //Task which will show what the dependency set of the project is in a tree form
+        // Task which will show what the dependency set of the project is in a tree form
         Task listTask = project.getTasks().create(LIST_TASK_NAME, DependencyReportTask.class);
         listTask.setDescription("Show the dependency set of the project in a tree form");
 
-        //Task which will show what is introducing a particular dependency
+        // Task which will show what is introducing a particular dependency
         Task insightTask = project.getTasks().create(INSIGHT_TASK_NAME, DependencyInsightReportTask.class);
         insightTask.setDescription("Shows occurances of a particular dependency");
 
-        //Task which will show results filtered to project dependencies
-        DependencyInsightReportTask projectTask = project.getTasks().create(PROJECT_TASK_NAME, DependencyInsightReportTask.class);
+        // Task which will show results filtered to project dependencies
+        DependencyInsightReportTask projectTask = project.getTasks().create(PROJECT_TASK_NAME,
+                DependencyInsightReportTask.class);
         projectTask.setDependencySpec(new ProjectDependencyResultSpec(project));
         projectTask.setDescription("Shows dependencies on other projects in a multi-module environment");
     }

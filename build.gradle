@@ -14,6 +14,7 @@ buildscript {
 apply plugin: 'eclipse'
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
 apply plugin: 'maven-publish'
 apply plugin: 'nebula.dependency-recommender'
 apply plugin: 'nebula.maven-resolved-dependencies'
@@ -55,6 +56,18 @@ dependencies {
     
     testCompile group: 'org.testng', name: 'testng'
 }
+
+checkstyle {
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+    configProperties = [ 'checkstyle.config.dir' : rootProject.file('config/checkstyle') ]
+    toolVersion = '8.18'
+}
+ 
+task checkstyleAll{}
+ 
+tasks.withType(Checkstyle).all { checkstyleTask -> checkstyleAll.dependsOn checkstyleTask }
+ 
+check.dependsOn checkstyleAll
 
 //Add LICENSE so it is included in all JARs, fulfilling the "distributions include license" requirement
 jar{

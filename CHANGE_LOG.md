@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- (GH-19) Corrected formatting errors detected by Checkstyle
 
 ## [1.0.0]
 ### Changed
@@ -12,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.2.0]
 ### Added
-- (GH-10) Add "dependencProjectReport" task to allow finding dependency instances specifically of projects in the same multi-module configuration
+- (GH-10) Add "dependencyProjectReport" task to allow finding dependency instances specifically of projects in the same multi-module configuration
 
 ### Changed
 - (GH-9) Switch to passing report location as a file to try and use newer APIs when available
