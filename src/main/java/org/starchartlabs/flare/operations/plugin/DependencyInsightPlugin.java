@@ -35,16 +35,19 @@ public class DependencyInsightPlugin implements Plugin<Project> {
     public void apply(Project project) {
         // Task which will show what the dependency set of the project is in a tree form
         Task listTask = project.getTasks().create(LIST_TASK_NAME, DependencyReportTask.class);
+        listTask.setGroup("Help");
         listTask.setDescription("Show the dependency set of the project in a tree form");
 
         // Task which will show what is introducing a particular dependency
         Task insightTask = project.getTasks().create(INSIGHT_TASK_NAME, DependencyInsightReportTask.class);
+        insightTask.setGroup("Help");
         insightTask.setDescription("Shows occurances of a particular dependency");
 
         // Task which will show results filtered to project dependencies
         DependencyInsightReportTask projectTask = project.getTasks().create(PROJECT_TASK_NAME,
                 DependencyInsightReportTask.class);
         projectTask.setDependencySpec(new ProjectDependencyResultSpec(project));
+        projectTask.setGroup("Help");
         projectTask.setDescription("Shows dependencies on other projects in a multi-module environment");
     }
 
