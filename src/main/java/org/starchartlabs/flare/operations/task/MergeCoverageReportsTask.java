@@ -27,6 +27,9 @@ public class MergeCoverageReportsTask extends JacocoReport {
     public MergeCoverageReportsTask() {
         super();
 
+        setGroup("Verification");
+        setDescription("Merges Jacoco coverage reports from multiple modules into a single report");
+
         executionData(
                 getProject().fileTree(getProject().getRootDir().getAbsolutePath()).include("**/build/jacoco/*.exec"));
 
