@@ -34,14 +34,22 @@ public class MergeCoverageReportsTask extends JacocoReport {
                 getProject().fileTree(getProject().getRootDir().getAbsolutePath()).include("**/build/jacoco/*.exec"));
 
         // Sub-project, get the main source set. Must be done after evaluation to detect java plug-in
-        getProject().getSubprojects().forEach(it -> {
-            it.getPluginManager().apply("java");
+        getProject().getSubprojects().forEach(subproject -> {
+            subproject.getPluginManager().withPlugin("java", plugin -> {
+                JavaPluginConvention javaPlugin = subproject.getConvention().getPlugin(JavaPluginConvention.class);
+                SourceSetContainer sourceSets = javaPlugin.getSourceSets();
+                SourceSet mainSourceSet = sourceSets.findByName("main");
 
-            JavaPluginConvention javaPlugin = it.getConvention().getPlugin(JavaPluginConvention.class);
-            SourceSetContainer sourceSets = javaPlugin.getSourceSets();
-            SourceSet mainSourceSet = sourceSets.findByName("main");
+                sourceSets(mainSourceSet);
+            });
 
-            sourceSets(mainSourceSet);
+            subproject.getPluginManager().withPlugin("java-library", plugin -> {
+                JavaPluginConvention javaPlugin = subproject.getConvention().getPlugin(JavaPluginConvention.class);
+                SourceSetContainer sourceSets = javaPlugin.getSourceSets();
+                SourceSet mainSourceSet = sourceSets.findByName("main");
+
+                sourceSets(mainSourceSet);
+            });
         });
 
         getReports().getXml().setEnabled(true);

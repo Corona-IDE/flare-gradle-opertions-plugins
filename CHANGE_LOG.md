@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - (GH-19) Corrected formatting errors detected by Checkstyle
+- (GH-23) Switch to reactive configuration of values dependent on the java plug-in, to reduce coupling with that specific plug-in
 
 ## [1.0.0]
 ### Changed

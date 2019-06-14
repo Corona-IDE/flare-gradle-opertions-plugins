@@ -25,6 +25,7 @@ public class IncreaseTestLoggingPluginTest {
     @BeforeClass
     public void setupProject() {
         project = ProjectBuilder.builder().build();
+        project.getPluginManager().apply("java");
         project.getPluginManager().apply(PLUGIN_ID);
     }
 

@@ -20,6 +20,7 @@ public class MergeCoverageReportsPluginTest {
     @Test
     public void baseAndJacocoPluginsApplied() throws Exception {
         Project project = ProjectBuilder.builder().build();
+        project.getPluginManager().apply("java");
         project.getPluginManager().apply(PLUGIN_ID);
 
         Assert.assertTrue(project.getPluginManager().hasPlugin("base"));
@@ -27,20 +28,9 @@ public class MergeCoverageReportsPluginTest {
     }
 
     @Test
-    public void javaPluginAppliedToSubProject() throws Exception {
-        Project project = ProjectBuilder.builder().build();
-        Project subProject = ProjectBuilder.builder()
-                .withParent(project)
-                .build();
-
-        project.getPluginManager().apply(PLUGIN_ID);
-
-        Assert.assertTrue(subProject.getPluginManager().hasPlugin("java"));
-    }
-
-    @Test
     public void taskAddedAndIntegratedWithBuild() {
         Project project = ProjectBuilder.builder().build();
+        project.getPluginManager().apply("java");
         project.getPluginManager().apply(PLUGIN_ID);
 
         Task task = project.getTasks().getByName("mergeCoverageReports");
