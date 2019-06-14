@@ -21,17 +21,28 @@ public class IncreaseTestLoggingPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-        // java: Provides test configuration
-        project.getPluginManager().apply("java");
+        project.getPluginManager().withPlugin("java", plugin -> {
+            TaskCollection<Test> testTasks = project.getTasks().withType(Test.class);
 
-        TaskCollection<Test> testTasks = project.getTasks().withType(Test.class);
+            testTasks.forEach(it -> {
+                it.getTestLogging().setExceptionFormat("full");
+                it.getTestLogging().getQuiet().events("failed", "skipped");
+                it.getTestLogging().getInfo().events("failed", "skipped", "passed", "standard_out", "standard_error");
+                it.getTestLogging().getDebug().events("failed", "skipped", "passed", "standard_out", "standard_error",
+                        "started");
+            });
+        });
 
-        testTasks.forEach(it -> {
-            it.getTestLogging().setExceptionFormat("full");
-            it.getTestLogging().getQuiet().events("failed", "skipped");
-            it.getTestLogging().getInfo().events("failed", "skipped", "passed", "standard_out", "standard_error");
-            it.getTestLogging().getDebug().events("failed", "skipped", "passed", "standard_out", "standard_error",
-                    "started");
+        project.getPluginManager().withPlugin("java-library", plugin -> {
+            TaskCollection<Test> testTasks = project.getTasks().withType(Test.class);
+
+            testTasks.forEach(it -> {
+                it.getTestLogging().setExceptionFormat("full");
+                it.getTestLogging().getQuiet().events("failed", "skipped");
+                it.getTestLogging().getInfo().events("failed", "skipped", "passed", "standard_out", "standard_error");
+                it.getTestLogging().getDebug().events("failed", "skipped", "passed", "standard_out", "standard_error",
+                        "started");
+            });
         });
     }
 }

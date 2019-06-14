@@ -40,10 +40,19 @@ public class MergeCoverageReportsPlugin implements Plugin<Project> {
 
         // Merge coverage depends on output from all subproject tests
         project.getSubprojects().forEach(it -> {
-            Task test = it.getTasks().getByName("test");
-            if (test != null) {
-                mergeTask.dependsOn(test);
-            }
+            it.getPluginManager().withPlugin("java", plugin -> {
+                Task test = it.getTasks().getByName("test");
+                if (test != null) {
+                    mergeTask.dependsOn(test);
+                }
+            });
+
+            it.getPluginManager().withPlugin("java-library", plugin -> {
+                Task test = it.getTasks().getByName("test");
+                if (test != null) {
+                    mergeTask.dependsOn(test);
+                }
+            });
         });
     }
 
