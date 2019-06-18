@@ -21,6 +21,41 @@ The requirement for a copy of the license being included in distributions is ful
 
 Information for how to contribute to the Flare Operations Plugins can be found in [the contribution guidelines](./docs/CONTRIBUTING.md)
 
+## Supported Gradle Versions
+
+### Gradle 3.2.1 through 3.5.1 (Inclusive)
+
+_Supported by plug-in versions 0.x and 1.x_
+
+Plug-in versions 0.x and 1.x work with the Gradle 3 major revision without adjustment
+
+### Gradle 4.x 
+
+_Supported by plug-in version 1.x_
+
+#### Plug-in Version 1.x Required Workaround
+
+Plug-in versions 1.x work with Gradle 4, with the exception of the merge coverage reports plug-in. This can be corrected with the workaround described in [GH-20](https://github.com/StarChart-Labs/flare-operations-plugins/issues/20) of applying the following the the root project after applying the plug-in:
+
+```
+mergeCoverageReports {
+    reports {
+        xml.enabled true
+        html.enabled false
+        csv.enabled false
+        
+        xml.destination = "${buildDir}/reports/jacoco/report.xml"
+    }
+}
+```
+
+## Migrating Gradle Versions
+
+### Gradle 3.x to 4.x
+
+- Upgrade to plug-in versions 1.x
+- Apply workaround for [GH-20](https://github.com/StarChart-Labs/flare-operations-plugins/issues/20) if using the merge coverage reports plug-in
+
 ## Plug-ins
 
 ### org.starchartlabs.flare.merge-coverage-reports
