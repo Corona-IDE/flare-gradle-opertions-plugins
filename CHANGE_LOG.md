@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.1.0]
 ### Changed
 - (GH-19) Corrected formatting errors detected by Checkstyle
 - (GH-23) Switch to reactive configuration of values dependent on the java plug-in, to reduce coupling with that specific plug-in

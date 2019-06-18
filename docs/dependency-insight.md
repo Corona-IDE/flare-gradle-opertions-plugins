@@ -12,7 +12,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath group: 'org.starchartlabs.flare', name: 'flare-operations-plugins', version: '1.0.0'
+        classpath group: 'org.starchartlabs.flare', name: 'flare-operations-plugins', version: '1.1.0'
     }
 }
 
