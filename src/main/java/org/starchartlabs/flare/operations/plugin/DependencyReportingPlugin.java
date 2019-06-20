@@ -20,25 +20,23 @@ import org.starchartlabs.flare.operations.dsl.ProjectDependencyResultSpec;
 /**
  * Plug-in which applies tasks which allow inspection of dependency information
  *
+ * <p>
+ * Replacement for legacy dependency-insight plug-in as of 2.0.0 due to task name conflicts with Gradle project-report
+ * plug-in
+ *
  * @author romeara
- * @since 0.1.0
- * @deprecated Since 2.0.0 due to task name conflicts with Gradle project-report plug-in - use
- *             {@link DependencyReportingPlugin} instead
+ * @since 2.0.0
  */
-@Deprecated
-public class DependencyInsightPlugin implements Plugin<Project> {
+public class DependencyReportingPlugin implements Plugin<Project> {
 
-    private static final String LIST_TASK_NAME = "dependencyReport";
+    private static final String LIST_TASK_NAME = "dependencyFullReport";
 
-    private static final String INSIGHT_TASK_NAME = "dependencyInsightReport";
+    private static final String INSIGHT_TASK_NAME = "dependencyDetailReport";
 
-    private static final String PROJECT_TASK_NAME = "dependencyProjectReport";
+    private static final String PROJECT_TASK_NAME = "dependencyProjectDetailReport";
 
     @Override
     public void apply(Project project) {
-        project.getLogger().warn(
-                "The org.starchartlabs.flare.dependency-insight plug-in is deprecated. Switch to org.starchartlabs.flare.dependency-reporting");
-
         // Task which will show what the dependency set of the project is in a tree form
         Task listTask = project.getTasks().create(LIST_TASK_NAME, DependencyReportTask.class);
         listTask.setGroup("Help");

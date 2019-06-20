@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - (GH-27) Update minimum required Gradle version to 4.0
 - (GH-20) Added workaround to force correct configuration of mergeCoverageReports task upon plug-in application
+- (GH-28) Deprecated dependency-insight plug-in due to task name conflicts with Gradle project-report plug-in
+- (GH-28) Added dependency-reporting plug-in to replace deprecated dependency-insight plug-in
 
 ## [1.1.0]
 ### Changed

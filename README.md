@@ -72,7 +72,15 @@ Introduces standard conventions for increased logging during test execution
 
 See the [usage documentation](./docs/increase-test-logging.md) for information and requirements for applying the plug-in
 
+### org.starchartlabs.flare.dependency-reporting
+
+Introduces standard tasks for viewing dependency information in multi-module projects
+
+See the [usage documentation](./docs/dependency-reporting.md) for information and requirements for applying the plug-in
+
 ### org.starchartlabs.flare.dependency-insight
+
+*This plug-in is DEPRECATED - use `org.starchartlabs.flare.dependency-insight` instead*
 
 Introduces standard tasks for viewing dependency information in multi-module projects
 
