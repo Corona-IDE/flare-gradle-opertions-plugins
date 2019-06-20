@@ -13,7 +13,6 @@ package org.starchartlabs.flare.operations.plugin;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
-import org.gradle.testing.jacoco.tasks.JacocoReport;
 import org.starchartlabs.flare.operations.task.MergeCoverageReportsTask;
 
 /**
@@ -34,7 +33,10 @@ public class MergeCoverageReportsPlugin implements Plugin<Project> {
         project.getPluginManager().apply("base");
         project.getPluginManager().apply("jacoco");
 
-        JacocoReport mergeTask = project.getTasks().create(TASK_NAME, MergeCoverageReportsTask.class);
+        MergeCoverageReportsTask mergeTask = project.getTasks().create(TASK_NAME, MergeCoverageReportsTask.class);
+        // GH-20 For some reason, things like description stay after creation in constructor, but the reports object
+        // seems to be reset
+        mergeTask.configureReports();
 
         project.getTasks().getByName("check").dependsOn(mergeTask);
 

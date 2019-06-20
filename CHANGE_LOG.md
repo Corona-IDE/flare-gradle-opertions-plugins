@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - (GH-27) Update minimum required Gradle version to 4.0
+- (GH-20) Added workaround to force correct configuration of mergeCoverageReports task upon plug-in application
 
 ## [1.1.0]
 ### Changed
