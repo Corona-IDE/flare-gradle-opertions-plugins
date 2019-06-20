@@ -24,3 +24,9 @@ mergeCoverageReports {
     }
 }
 ```
+- Migrate from `org.starchartlabs.flare.dependency-insight` plug-in to `org.starchartlabs.flare.dependency-reporting`
+  - This does not require re-configuration, but will change the names of the tasks added by the plug-in:
+    - `dependencyReport` -> `dependencyFullReport`
+    - `dependencyInsightReport` -> `dependencyDetailReport`
+    - `dependencyProjectReport` -> `dependencyProjectDetailReport`
+    
