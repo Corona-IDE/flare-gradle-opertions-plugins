@@ -10,6 +10,8 @@
  */
 package org.starchartlabs.flare.operations.task;
 
+import java.io.File;
+
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetContainer;
@@ -52,11 +54,21 @@ public class MergeCoverageReportsTask extends JacocoReport {
             });
         });
 
-        getReports().getXml().setEnabled(true);
-        getReports().getXml().setDestination(
-                getProject().file(getProject().getBuildDir().toString() + "/reports/jacoco/report.xml"));
-        getReports().getHtml().setEnabled(false);
-        getReports().getCsv().setEnabled(false);
+        // GH-20 This doesn't seem to take effect, so the plug-in repeats it
+        configureReports();
+    }
+
+    // GH-20 Exposed to prevent duplicate definitions. Run by the plug-in (again) to workaround GH-20. Setting
+    // description in the constructor works, setting reports values doesn't
+    public void configureReports() {
+        reports(reports -> {
+            File destination = getProject().file(getProject().getBuildDir().toString() + "/reports/jacoco/report.xml");
+
+            reports.getXml().setEnabled(true);
+            reports.getXml().setDestination(destination);
+            reports.getHtml().setEnabled(false);
+            reports.getCsv().setEnabled(false);
+        });
     }
 
 }
