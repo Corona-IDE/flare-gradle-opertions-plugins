@@ -1,13 +1,14 @@
 buildscript {
     repositories {
         maven { url 'https://plugins.gradle.org/m2/' }
+        jcenter()
     }
     dependencies {
-        classpath group: 'com.netflix.nebula', name: 'nebula-dependency-recommender', version: '4.2.0'
-        classpath group: 'com.netflix.nebula', name: 'nebula-publishing-plugin', version: '4.2.0'
-        classpath group: 'com.jfrog.bintray.gradle', name: 'gradle-bintray-plugin', version: '1.7.3'
-        classpath group: 'org.starchartlabs.flare', name: 'flare-operations-plugins', version: '1.0.0'
-        classpath group: 'org.starchartlabs.flare', name: 'flare-publishing-plugins', version: '0.1.0'
+        classpath 'com.netflix.nebula:nebula-dependency-recommender:4.2.0'
+        classpath 'com.netflix.nebula:nebula-publishing-plugin:4.2.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'org.starchartlabs.flare:flare-operations-plugins:1.1.0'
+        classpath 'org.starchartlabs.flare:flare-publishing-plugins:0.3.0'
     }
 }
 
@@ -24,22 +25,19 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'org.starchartlabs.flare.increase-test-logging'
 apply plugin: 'org.starchartlabs.flare.published-project'
 
+// Putting this in gradle.properties breaks the build, because this uses it's own releases
+group = 'org.starchartlabs.flare'
+
 description = 'Gradle tasks and utilities for build and test operations'
 
 dependencyRecommendations {
     propertiesFile file: file("${rootDir}/dependencies.properties")
 }
 
-//Default all projects to a synchronized IDE version number. Certain projects, such as the API project, will override this value
-group = 'org.starchartlabs.flare'
-
-sourceCompatibility = "${javaVersion}"
-
 //Always download sources, to allow debugging, and use Eclipse containers for greater portability
 eclipse {
     classpath {
         downloadSources=true
-        containers = [ 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8' ]
     }
 }
 
@@ -54,7 +52,7 @@ dependencies {
     
     testCompile gradleTestKit()
     
-    testCompile group: 'org.testng', name: 'testng'
+    testCompile 'org.testng:testng'
 }
 
 checkstyle {
@@ -105,7 +103,7 @@ jacocoTestReport {
         xml.enabled true
         csv.enabled false
         html.enabled false
-        xml.destination "${buildDir}/reports/jacoco/report.xml"
+        xml.destination file("${buildDir}/reports/jacoco/report.xml")
     }
 }
 
@@ -122,7 +120,7 @@ if(!project.hasProperty('remoteDeploy')){
 }
 
 publishedInfo{
-    url = 'https://github.com/Corona-IDE/flare-operations-plugins'
+    url = 'https://github.com/StarChart-Labs/flare-operations-plugins'
   
     scm{
       github 'StarChart-Labs', 'flare-operations-plugins'
@@ -164,8 +162,4 @@ bintray {
             }
         }
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = "${gradleVersion}"
 }

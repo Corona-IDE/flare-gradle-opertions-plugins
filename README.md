@@ -11,6 +11,8 @@
 
 Contains plug-ins for the Gradle build system which simplify configuration or reduce boilerplate for commonly-used conventions
 
+For information on migrating between major plug-in versions, see the [migration guide](./docs/MIGRATIONS.md)
+
 ## Legal
 
 The Flare Operations Plug-ins are distributed under the [MIT License](https://opensource.org/licenses/MIT). There are no requirements for using it in your own project (a line in a NOTICES file is appreciated but not necessary for use)
@@ -31,7 +33,7 @@ Plug-in versions 0.x and 1.x work with the Gradle 3 major revision without adjus
 
 ### Gradle 4.x 
 
-_Supported by plug-in version 1.x_
+_Supported by plug-in version 1.x and 2.x_
 
 #### Plug-in Version 1.x Required Workaround
 
