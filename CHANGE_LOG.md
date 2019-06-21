@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.0.0]
 ### Changed
 - (GH-27) Update minimum required Gradle version to 4.0
 - (GH-20) Added workaround to force correct configuration of mergeCoverageReports task upon plug-in application
