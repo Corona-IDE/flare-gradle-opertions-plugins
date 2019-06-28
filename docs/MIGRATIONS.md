@@ -30,3 +30,9 @@ mergeCoverageReports {
     - `dependencyInsightReport` -> `dependencyDetailReport`
     - `dependencyProjectReport` -> `dependencyProjectDetailReport`
     
+### 2.x to 3.x
+
+### Required
+
+- Update to Gradle 5.x or later
+    
