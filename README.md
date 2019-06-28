@@ -51,12 +51,20 @@ mergeCoverageReports {
 }
 ```
 
+### Gradle 5.x 
+
+_Supported by plug-in version 2.x and 3.x_
+
 ## Migrating Gradle Versions
 
 ### Gradle 3.x to 4.x
 
 - Upgrade to plug-in versions 1.x
 - Apply workaround for [GH-20](https://github.com/StarChart-Labs/flare-operations-plugins/issues/20) if using the merge coverage reports plug-in
+
+### Gradle 4.x to 5.x
+
+- Upgrade to plug-in versions 2.x+
 
 ## Plug-ins
 
