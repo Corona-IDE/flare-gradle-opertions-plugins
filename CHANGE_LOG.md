@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- (GH-35) Added ability to specify credentials and their load sources within Gradle builds
+
 ### Changed
 - (GH-33) Update minimum required Gradle version to 5.0
 

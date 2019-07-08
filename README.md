@@ -86,6 +86,12 @@ Introduces standard tasks for viewing dependency information in multi-module pro
 
 See the [usage documentation](./docs/dependency-reporting.md) for information and requirements for applying the plug-in
 
+### org.starchartlabs.flare.managed-credentials
+
+Introduces standard domain-specific language to Gradle builds for defining credentials loaded during the build process
+
+See the [usage documentation](./docs/managed-credentials.md) for information and requirements for applying the plug-in
+
 ### org.starchartlabs.flare.dependency-insight
 
 *This plug-in is DEPRECATED - use `org.starchartlabs.flare.dependency-insight` instead*
