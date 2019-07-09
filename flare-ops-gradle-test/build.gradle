@@ -9,6 +9,17 @@ buildscript {
 }
 
 apply plugin: 'org.starchartlabs.flare.merge-coverage-reports'
+apply plugin: 'org.starchartlabs.flare.managed-credentials'
+
+credentials {
+    bintray {
+        environment('ENV1', 'ENV2')
+        systemProperties('bintray_user', 'bintray_key')
+        defaultLogin('defaultuser', 'defaultpassword')
+    }
+}
+
+println "${credentials.bintray.username}"
 
 allprojects{
     apply plugin: 'java'
