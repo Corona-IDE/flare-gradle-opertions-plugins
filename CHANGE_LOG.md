@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - (GH-35) Added ability to specify credentials and their load sources within Gradle builds
+- (GH-37) Added ability to load dependency version constraints from a properties file
 
 ### Changed
 - (GH-33) Update minimum required Gradle version to 5.0
