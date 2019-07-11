@@ -22,7 +22,6 @@ credentials {
 println "${credentials.bintray.username}"
 
 allprojects{
-    apply plugin: 'java'
     apply plugin: 'org.starchartlabs.flare.dependency-insight'
     apply plugin: 'org.starchartlabs.flare.dependency-reporting'
     
@@ -32,8 +31,14 @@ allprojects{
 }
 
 subprojects{
+    apply plugin: 'java'
     apply plugin: 'jacoco'
     apply plugin: 'org.starchartlabs.flare.increase-test-logging'
+    apply plugin: 'org.starchartlabs.flare.dependency-versions'
+    
+    dependencyVersions{
+        propertiesFile file("${rootDir}/dependencies.properties")
+    }
     
     test {
         useTestNG() {

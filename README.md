@@ -8,6 +8,9 @@
     * [org.starchartlabs.flare.merge-coverage-reports](#org.starchartlabs.flare.merge-coverage-reports)
     * [org.starchartlabs.flare.increase-test-logging](#org.starchartlabs.flare.increase-test-logging)
     * [org.starchartlabs.flare.dependency-insight](#org.starchartlabs.flare.dependency-insight)
+    * [org.starchartlabs.flare.dependency-insight](#org.starchartlabs.flare.dependency-reporting)
+    * [org.starchartlabs.flare.dependency-insight](#org.starchartlabs.flare.managed-credentials)
+    * [org.starchartlabs.flare.dependency-insight](#org.starchartlabs.flare.dependency-versions)
 
 Contains plug-ins for the Gradle build system which simplify configuration or reduce boilerplate for commonly-used conventions
 
@@ -91,6 +94,12 @@ See the [usage documentation](./docs/dependency-reporting.md) for information an
 Introduces standard domain-specific language to Gradle builds for defining credentials loaded during the build process
 
 See the [usage documentation](./docs/managed-credentials.md) for information and requirements for applying the plug-in
+
+### org.starchartlabs.flare.dependency-versions
+
+Introduces standard domain-specific language to Gradle builds for defining dependency constraints in a properties file
+
+See the [usage documentation](./docs/dependency-versions.md) for information and requirements for applying the plug-in
 
 ### org.starchartlabs.flare.dependency-insight
 
