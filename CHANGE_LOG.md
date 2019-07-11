@@ -5,8 +5,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
-## [3.0.0]
 ### Added
 - (GH-35) Added ability to specify credentials and their load sources within Gradle builds
 - (GH-37) Added ability to load dependency version constraints from a properties file
