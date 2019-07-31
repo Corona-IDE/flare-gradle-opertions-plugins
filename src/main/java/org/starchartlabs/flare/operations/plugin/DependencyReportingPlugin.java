@@ -37,6 +37,9 @@ public class DependencyReportingPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
+        project.getLogger().warn(
+                "The org.starchartlabs.flare.dependency-reporting plug-in from flare-operations-plugins is deprecated. See migration guide at https://github.com/StarChart-Labs/flare-plugins/blob/master/docs/FLARE_OPERATIONS_MIGRATION.md");
+
         // Task which will show what the dependency set of the project is in a tree form
         Task listTask = project.getTasks().create(LIST_TASK_NAME, DependencyReportTask.class);
         listTask.setGroup("Help");
