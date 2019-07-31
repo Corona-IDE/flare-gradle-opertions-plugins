@@ -28,6 +28,9 @@ public class MergeCoverageReportsPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
+        project.getLogger().warn(
+                "The org.starchartlabs.flare.merge-coverage-reports plug-in from flare-operations-plugins is deprecated. See migration guide at https://github.com/StarChart-Labs/flare-plugins/blob/master/docs/FLARE_OPERATIONS_MIGRATION.md");
+
         // Base: Provides build task, Java: Provides sourceSets (and sourceSets.main configuration), Jacoco: Provides
         // coverage instrumentation
         project.getPluginManager().apply("base");

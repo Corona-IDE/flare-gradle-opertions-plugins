@@ -20,6 +20,9 @@ public class DependencyVersionsPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
+        project.getLogger().warn(
+                "The org.starchartlabs.flare.dependency-versions plug-in from flare-operations-plugins is deprecated. See migration guide at https://github.com/StarChart-Labs/flare-plugins/blob/master/docs/FLARE_OPERATIONS_MIGRATION.md");
+
         project.getExtensions().add("dependencyVersions", new DependencyVersions(project));
     }
 

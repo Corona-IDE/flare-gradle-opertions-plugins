@@ -22,6 +22,9 @@ public class ManagedCredentialsPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
+        project.getLogger().warn(
+                "The org.starchartlabs.flare.managed-credentials plug-in from flare-operations-plugins is deprecated. See migration guide at https://github.com/StarChart-Labs/flare-plugins/blob/master/docs/FLARE_OPERATIONS_MIGRATION.md");
+
         NamedDomainObjectContainer<CredentialConfiguration> credentials = project
                 .container(CredentialConfiguration.class, name -> {
                     return new CredentialConfiguration(name);
